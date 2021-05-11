@@ -91,14 +91,14 @@ function mainFunction() {
     //      2.  Add a keyup event that checks the value of the user input. If value contains 
     //          the letter "h", display alert box. The .includes method may be usefull here.
 
-
-
-
+    const userInput = document.getElementsByClassName('input-field')[0];
     
-
-
-
-
+    userInput.addEventListener('keyup', (e) => {
+        if(userInput.value.includes === 'h'){
+            alert('You cannot use the letter H');
+        }
+    });
+    
 
     // ****************************************************************************
     //  Exercise #6

@@ -45,11 +45,6 @@ function mainFunction() {
     });
 
 
-
-
-
-
-
     // ***************************************************************************
     //  Exercise #3
     //      When user clicks on the subscribe button, an alert box should pop up 
@@ -60,12 +55,10 @@ function mainFunction() {
     //      2.  Add a click event that will display an alert box with the message 
     //          "Thank you for subscribing". 
 
-
-
-    
-
-
-
+    const subscribeButton = document.getElementById("subscribe-button");
+    subscribeButton.addEventListener('click', (e) => {
+        alert("Thank you for subscribing.");
+    });
 
 
     // ***************************************************************************
@@ -78,14 +71,14 @@ function mainFunction() {
     //      2.  Add a click event to each button that will trigger a function which will cause the 
     //          visibility property of the button clicked to be changed to hidden to black. You 
     //          should use some sort of loop to add the event listener to each button.
-
-
     
-
-
-
-
-
+    const cardButton = document.getElementsByClassName('card-btn');
+    
+    for(let i = 0; i < cardButton.length; i++) {
+        cardButton[i].addEventListener('click', (e) => {
+            cardButton[i].style.visibility = "hidden";
+        });
+    }
 
 
     // ***************************************************************************

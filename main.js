@@ -18,11 +18,15 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text color in the button to black.
 
-
-
-
-
-    
+        const changeColorButton = document.getElementById("change-text-color");
+        changeColorButton.addEventListener('click', (e) => {
+            if(changeColorButton.style.color === 'white') {
+                changeColorButton.style.color = "black";
+            } else {
+                changeColorButton.style.color = "white";
+            }
+ 
+        });
 
 
     // ***************************************************************************
@@ -35,7 +39,10 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text in the button to "Hello World".
 
-    
+    const changeTextButton = document.getElementById("change-text-color");
+    changeTextButton.addEventListener('click', (e) => {
+        changeTextButton.innerHTML = "Hello World!";
+    });
 
 
 

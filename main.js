@@ -11,7 +11,7 @@ function mainFunction() {
     
     // *************************************************************************
     //  Exercise #1
-    //      Change the color of the text within the h1 with an id of #main-h1.
+    //      Change the color of the text within the button with an id of #change-text-color
     //
     //      1.  Select the button with an id of #change-text-color and save 
     //          it to a variable named changeColorButton.
@@ -19,10 +19,19 @@ function mainFunction() {
     //      3.  Add a function that will change the text color in the button to black.
 
 
+        //  const changeColorButton=document.getElementById('change-text-color');
+        //  changeColorButton.onclick=function(){
+        //      changeColorButton.style.color="black";
 
+        // }
+         const changeColorButton=document.getElementById('change-text-color');
+         changeColorButton.addEventListener('click',
+         function(){
+             changeColorButton.style.color="black";
 
+         })
 
-    
+     
 
 
     // ***************************************************************************
@@ -35,8 +44,16 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text in the button to "Hello World".
 
-    
+    // const changeTextButton=document.getElementById('change-text-color');
+    // changeTextButton.onclick=function(){
+    //     changeTextButton.innerHTML="Hello World";
+    // }
 
+    const changeTextButton = document.getElementById('change-text-color');
+    changeTextButton.addEventListener('click', function () {
+        changeTextButton.innerHTML = 'Hello World';
+
+    })
 
 
 
@@ -53,7 +70,14 @@ function mainFunction() {
     //      2.  Add a click event that will display an alert box with the message 
     //          "Thank you for subscribing". 
 
-
+const subscribeButton=document.getElementsById('subscribe-button');
+subscribeButton.onclick=function(){
+    alert("Thank you for subscribing");
+}
+// const subscribeButton=document.getElementsById('subscribe-button');
+// subscribeButton.addEventListener('click',function(){
+//     alert("Thank you for subscribing");
+// })
 
     
 
@@ -72,6 +96,21 @@ function mainFunction() {
     //          visibility property of the button clicked to be changed to hidden to black. You 
     //          should use some sort of loop to add the event listener to each button.
 
+    const cardButton=document.getElementsByClassName('card-btn ');
+    for(let i=0;i<cardButton.length;i++){
+        cardButton[i].addEventListener('click',function(){
+            cardButton[i].style.visibility='hidden';
+        })
+    }
+    const cardButton=document.getElementsByClassName('card-btn ');
+    cardButton.forEach(button => {
+        button.onclick=function (){
+                  button.style.visibility='hidden' //dispaly='none'
+      
+            
+        }
+        
+    });
 
     
 
@@ -92,7 +131,13 @@ function mainFunction() {
     //          the letter "h", display alert box. The .includes method may be usefull here.
 
 
+const userInput=document.getElementsByClassName('input-field')[0];
+userInput.addEventListener('keyup',function(event){
 
+    if(userInput.value.includes('h')){
+        alert(userInput.value);
+    }
+});
 
     
 
@@ -110,9 +155,25 @@ function mainFunction() {
     //      3.  Add a mouseout event that will change the color of the text in the h3 element back to white.
 
 
+// const newsletterHeader=document.getElementsByTagName('h3')[0];
+// newsletterHeader.onmouseover.style.color="red";
+// newsletterHeader.onmouseout.style.color="white";
+
+
+const newsletterHeader=document.getElementsByTagName('h3');
+newsletterHeader.addEventListener('mouseover',
+function(){
+    newsletterHeader.style.color="red";
+})
+newsletterHeader.addEventListener('mouseout',
+function(){
+    newsletterHeader.style.color="white";
+})
 
 
 
+
+ 
 
 
     
@@ -127,12 +188,13 @@ function mainFunction() {
     //          able to append your new div to the page.
     //      3.  Add a click event to the addDiv button which will run a function creating a new div
     //          with a <p> tag containing some text.
-
-
-
-
-
-    
+const addDiv=document.getElementsById('add-element');
+const parentDiv=document.getElementsById('add-element-section');
+addDiv.onclick=function(){
+    const newDiv=document.createElement('div');
+    newDiv.innerHTML="<p>Hello World</p>";
+    parentDiv.appendChild(newDiv);
+}
 
 
 }

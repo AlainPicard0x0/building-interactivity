@@ -19,7 +19,10 @@ function mainFunction() {
     //      3.  Add a function that will change the text color in the button to black.
 
 
-
+const changeColorButton = document.getElementById('change-text-color');
+changeColorButton.onclick = function () {
+    changeColorButton.style.color = "black";
+}
 
 
     
@@ -35,7 +38,10 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text in the button to "Hello World".
 
-    
+    const changeTextButton = document.getElementById('change-text-color');
+    changeTextButton.onclick = function () {
+        changeTextButton.innerHTML = "Hello World";
+    }
 
 
 
@@ -53,7 +59,10 @@ function mainFunction() {
     //      2.  Add a click event that will display an alert box with the message 
     //          "Thank you for subscribing". 
 
-
+const subscribeButton = document.getElementById("subscribe-button");
+subscribeButton.onclick = function () {
+    alert("Thank you for subscribing");
+}
 
     
 
@@ -73,7 +82,12 @@ function mainFunction() {
     //          should use some sort of loop to add the event listener to each button.
 
 
-    
+    const cardButton = document.querySelectorAll(".card-btn");
+    cardButton.forEach((cardBtn) => {
+        cardBtn.onclick = function() {
+            cardBtn.style.visibility = "hidden";
+        }
+    })
 
 
 
@@ -92,6 +106,13 @@ function mainFunction() {
     //          the letter "h", display alert box. The .includes method may be usefull here.
 
 
+const userInput = document.getElementsByClassName("input-field")[0];
+userInput.addEventListener("keyup", (e) => {
+    if(userInput.value.includes("h")) {
+        alert(userInput.value);
+    }
+}) 
+
 
 
     
@@ -109,6 +130,15 @@ function mainFunction() {
     //      2.  Add a mouseover event that will change the color of the text in the h3 element to red.
     //      3.  Add a mouseout event that will change the color of the text in the h3 element back to white.
 
+
+const newsletterHeader = document.getElementsByTagName("H3")[0];
+newsletterHeader.addEventListener("mouseover", function() {
+    newsletterHeader.style.color = "red";
+})
+
+newsletterHeader.addEventListener("mouseout", function() {
+    newsletterHeader.style.color = "white";
+})
 
 
 
@@ -129,16 +159,21 @@ function mainFunction() {
     //          with a <p> tag containing some text.
 
 
-
+const addDiv = document.getElementById("add-element");
+const parentDiv = document.getElementById("add-element-section");
+addDiv.addEventListener("click", () => {
+    const newDiv = document.createElement("div");
+    newDiv.innerHTML = "<p>adding div</p>";
+    parentDiv.appendChild(newDiv);
+})
 
 
     
 
 
+
+
 }
-
-
-
 
 
 

@@ -18,8 +18,10 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text color in the button to black.
 
-
-
+                const changeColorButton = document.getElementById('change-text-color');
+                changeColorButton.onclick = function (){
+                    changeColorButton.style.color ='black';
+                }
 
 
     
@@ -35,8 +37,15 @@ function mainFunction() {
     //      2.  Add a click event listener to the button with an id #change-text-color.
     //      3.  Add a function that will change the text in the button to "Hello World".
 
-    
+          const changeTextButton = document.getElementById('change-text-color');
+           changeTextButton.addEventListener("click",() => {
+           changeTextButton.innerHTML ='Hello World';
+            });
 
+        //    const changeTextButton = document.getElementById('change-text-color');
+        //     changeTextButton.onclick = function () {
+        //      changeTextButton.innerHTML ='Hello World';
+        //      };
 
 
 
@@ -53,7 +62,10 @@ function mainFunction() {
     //      2.  Add a click event that will display an alert box with the message 
     //          "Thank you for subscribing". 
 
-
+              const subscribeButton = document.getElementById('subscribe-button');
+                 subscribeButton.onclick = function (){
+                 alert("Thank you for subscribing.")
+              };
 
     
 
@@ -72,9 +84,23 @@ function mainFunction() {
     //          visibility property of the button clicked to be changed to hidden to black. You 
     //          should use some sort of loop to add the event listener to each button.
 
-
+            //   const cardButton = document.querySelectorAll(".card-btn");
+            //   console.log (cardButton);
+            //   cardButton.forEach((cardbtn) => {
+            //     cardbtn.addEventListener("click",() => {
+            //         cardbtn.style.visibility= 'hidden' ;
+               
+            //     })
+            //   });
+              
     
-
+              const cardButton = document.querySelectorAll(".card-btn");
+              cardButton.forEach((cardbtn) => {
+                cardbtn.onclick = function() {
+                    cardbtn.style.visibility = 'hidden' ;
+               
+                }
+              });
 
 
 
@@ -92,9 +118,14 @@ function mainFunction() {
     //          the letter "h", display alert box. The .includes method may be usefull here.
 
 
-
-
-    
+             const userInput = document.querySelector(".input-field");
+               console.log(userInput);
+               userInput.addEventListener("keyup",() => {
+                 if (userInput.value.includes("h")) {
+                    alert(userInput.value);
+                 };
+                 
+               })
 
 
 
@@ -109,8 +140,14 @@ function mainFunction() {
     //      2.  Add a mouseover event that will change the color of the text in the h3 element to red.
     //      3.  Add a mouseout event that will change the color of the text in the h3 element back to white.
 
-
-
+          const newsletterHeader = document.querySelector("h3");
+          console.log(newsletterHeader);
+          newsletterHeader.onmouseover = function () {
+            newsletterHeader.style.color = 'red';
+          };
+          newsletterHeader.onmouseout = function () {
+           newsletterHeader.style.color = 'white';
+           };
 
 
 
@@ -128,7 +165,14 @@ function mainFunction() {
     //      3.  Add a click event to the addDiv button which will run a function creating a new div
     //          with a <p> tag containing some text.
 
-
+         const addDiv = document.getElementById('add-element');
+       
+         const parentDiv = document.getElementById('add-element-section');
+         addDiv.onclick= function (){
+             const newDiv = document.createElement("div");
+             newDiv.innerHTML="<p>Hello World</p>";
+             parentDiv.appendChild(newDiv);
+         };
 
 
 

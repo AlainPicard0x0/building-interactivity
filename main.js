@@ -18,9 +18,12 @@ function mainFunction() {
 //      2.  Add a click event listener to the button with an id #change-text-color.
 //      3.  Add a function that will change the text color in the button to black.    
 
+let changeColorButton = document.getElementById('change-text-color');
+const changeColor = (el) => {
+    el.target.style.color = 'black';
+}
 
-    
-
+changeColorButton.addEventListener("click",changeColor);
 
 
 
@@ -37,11 +40,12 @@ function mainFunction() {
 //      2.  Add a click event listener to the button with an id #change-text-color.
 //      3.  Add a function that will change the text in the button to "Hello World".
 
+let changeTextButton = document.getElementById('change-text-color');
+
+changeTextButton.addEventListener("click", () => {
+    changeTextButton.innerHTML = "Hello World";
+});    
     
-    
-
-
-
 
 
 
@@ -56,7 +60,10 @@ function mainFunction() {
 //          "Thank you for subscribing". 
     
     
-
+const subscribeButton = document.getElementById('subscribe-button');
+subscribeButton.addEventListener("click", () => {
+    alert("Thank you for subscribing");
+})
 
         
 
@@ -74,7 +81,12 @@ function mainFunction() {
 //          visibility property of the button clicked to be changed to hidden. You 
 //          should use some sort of loop to add the event listener to each button.
 
-        
+let cardButton = document.getElementsByClassName("card-btn");
+for(i=0; i<cardButton.length; i++) {
+    cardButton[i].addEventListener("click", (e) => {
+        e.target.style.visibility = "hidden";
+    })
+}       
         
 
 
@@ -95,7 +107,11 @@ function mainFunction() {
 
        
 
-    
+    let userInput = document.getElementsByClassName("input-field");
+    const logWord = () => {
+        alert.textContent;
+    }
+    userInput.addEventListener("keyup",logWord);
 
 
 
@@ -110,7 +126,10 @@ function mainFunction() {
 //      2.  Add a mouseover event that will change the color of the text in the h3 element to red.
 //      3.  Add a mouseout event that will change the color of the text in the h3 element back to white.
 
-
+const newsletterHeader = document.getElementsByClassName('h3-element');
+let changeToRed = (el) => {
+    el.
+}
      
  
 
@@ -130,7 +149,15 @@ function mainFunction() {
 //      3.  Add a click event to the addDiv button which will run a function creating a new div
 //          with a <p> tag containing some text.
     
-    
+let addDiv = document.getElementsById("add-element");
+let parentDiv = document.getElementsById("add-element-section");
+
+addDiv.addEventListener("click", () => {
+    let newDiv = document.createElement("div");
+    let divText = "<p>Hello World</p>";
+    newDiv.innerHTML = divText;
+    parentDiv.append(newDiv);
+})
 
 
         

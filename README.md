@@ -1,5 +1,5 @@
-# building-interactivity
-
+# <a href="https://txlocnguyen.github.io/building-interactivity/">building-interactivity</a>
+Finished. See the website <a href="https://txlocnguyen.github.io/building-interactivity/">here</a>. Click <a href="https://github.com/txlocnguyen/building-interactivity/blob/main/main.js">here</a> to view code
 
 Instructions
 
